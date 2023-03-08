@@ -1,0 +1,119 @@
+[
+  {
+    "model": "users.customuser",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$IvtGGhMV0f7303N5X6Bpu9$V2BAfL0vZCexT8wqljEDfhFngMric0M6p6SfP3e1iLs=",
+      "last_login": "2023-03-08T20:49:17.898Z",
+      "is_superuser": true,
+      "username": "aa",
+      "first_name": "",
+      "last_name": "",
+      "email": "a@a.pl",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-03-08T20:48:54.569Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "flashcards.difficultylevel",
+    "pk": 1,
+    "fields": {
+      "name": "ninja",
+      "value": 5
+    }
+  },
+  {
+    "model": "flashcards.tag",
+    "pk": 1,
+    "fields": {
+      "name": "python"
+    }
+  },
+  {
+    "model": "flashcards.tag",
+    "pk": 2,
+    "fields": {
+      "name": "django"
+    }
+  },
+  {
+    "model": "flashcards.tag",
+    "pk": 3,
+    "fields": {
+      "name": "js"
+    }
+  },
+  {
+    "model": "flashcards.tag",
+    "pk": 4,
+    "fields": {
+      "name": "html"
+    }
+  },
+  {
+    "model": "flashcards.tag",
+    "pk": 5,
+    "fields": {
+      "name": "css"
+    }
+  },
+  {
+    "model": "flashcards.deck",
+    "pk": 1,
+    "fields": {
+      "author": 1,
+      "category": "Python",
+      "difficulty": 1,
+      "rating": 0,
+      "is_active": true,
+      "name": "Django nocą",
+      "description": "Najlepsze flashcardy ever, płać hajs!",
+      "tags": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 1,
+    "fields": {
+      "author": 1,
+      "category": "Django Models",
+      "difficulty": 1,
+      "rating": 0,
+      "is_active": true,
+      "question": "Jak zooptymalizować zapytania do relacji wiele do wielu?",
+      "answer": "Prefetch Releted zaprowadzi Cię do celu",
+      "tags": [
+        1,
+        2
+      ],
+      "decks": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "flashcards.flashcard",
+    "pk": 2,
+    "fields": {
+      "author": 1,
+      "category": "Django Vievs",
+      "difficulty": 1,
+      "rating": 0,
+      "is_active": true,
+      "question": "Czy w django models da się zrobić self.join?",
+      "answer": "F jak Francja!",
+      "tags": [
+        1
+      ],
+      "decks": [
+        1
+      ]
+    }
+  }
+]

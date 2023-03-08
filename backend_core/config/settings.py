@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
+
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-c=^%85aig2g!-+r6ppg(s$85zolxd-t$^(#f*nup!-j_@ju&iz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'backend_core']
 
 
 # Application definition
@@ -83,6 +85,12 @@ DATABASES = {
     }
 }
 
+
+DATABASE_URL = os.environ.get('DB_CONNECTION_STRING', None)
+
+if DATABASE_URL:
+    db_config = dj_database_url.config(default=DATABASE_URL, conn_max_age=500, ssl_require=False)
+    DATABASES['default'].update(db_config)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
