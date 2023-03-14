@@ -22,6 +22,7 @@ class Tag(models.Model):
 
         self.name = self.name.lower()
         if not tag:
+            self.name = self.name.lower()
             return super().save(*args, **kwargs)
 
         return tag
@@ -50,7 +51,7 @@ class Deck(Feature):
 
 
 class FlashCard(Feature):
-    decks = models.ManyToManyField('Deck', related_name='flashcards')
+    deck = models.ManyToManyField('Deck', related_name='flashcards')
     question = models.TextField()
     answer = models.TextField()
 
